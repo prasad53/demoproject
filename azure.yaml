@@ -1,0 +1,26 @@
+---
+
+- hosts: win
+
+  tasks:
+  - name: Do azure login
+    win_shell:  
+      az login --service-principal -u f22040ef-6462-4783-a130-8994bedbd0f0 -p jC67Q~DIYYsXtJwsj.7JLEWP3hPN93MpoObNP --tenant 463c3a4d-2165-4b7b-a5a6-84d544bf4c80
+
+  - name: Download cert 
+    win_shell: az keyvault certificate download --vault-name cglx -n cert -f cert.pfx
+    register: detail
+
+  - name: Import a certificate
+    win_certificate_store:
+      path: C:\Users\winuser\cert.pfx
+      state: present
+      file_type: pkcs12
+      store_location: LocalMachine
+      key_storage: machine
+    register: cert_import
+
+  - name: Show thumbprint
+    debug:
+      var: cert_import.thumbprints
+
