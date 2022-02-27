@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run ansible'){
             steps{
-              ansiblePlaybook installation: 'ansibletest', inventory: 'hosts', playbook: 'storage.yaml'
+              ansiblePlaybook installation: 'ansibletest', inventory: 'hosts', playbook: 'azure.yaml'
             }  
         }     
     }
