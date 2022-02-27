@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('git checkout'){
+            steps{
+                git 'https://github.com/prasad53/demoproject'
+            }
+        }
+        stage('Run ansible'){
+            steps{
+              ansiblePlaybook installation: 'ansibletest', inventory: 'hosts', playbook: 'storage.yaml'
+            }  
+        }     
+    }
+}
