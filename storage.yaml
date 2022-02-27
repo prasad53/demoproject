@@ -1,0 +1,9 @@
+---
+
+- hosts: win
+
+  tasks:
+
+  - name: create folder
+    win_shell:
+      mkdir demo
