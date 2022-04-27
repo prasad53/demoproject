@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages {
+   /* stages {
         stage('build') {
             steps {
                 echo 'Hello World'
@@ -15,6 +15,21 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Running in deploy stage"
+            }
+        }
+    }  */
+
+
+    stages {
+        stage('build image') {
+            steps {
+
+            }
+        }
+
+        stage('Push image'){
+            steps {
+                
             }
         }
     }
