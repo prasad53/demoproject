@@ -38,6 +38,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Pull image'){
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'image-cred', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
+                    sh '''
+                    
+                    docker pull prasad53/jenkins-java:1.0
+                    '''
+                }
+            }
+        }
     }
 }
 
