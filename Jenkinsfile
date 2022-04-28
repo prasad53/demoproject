@@ -21,9 +21,9 @@ pipeline {
 
 
     stages {
-      /*  stage('build image') {
+        stage('build image') {
             steps {
-                sh 'docker build -t prasad53/jenkins-java:1.0 .'
+                sh 'docker build -t prasad53/jenkins-java:2.0 .'
             }
         }
 
@@ -31,20 +31,20 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'image-cred', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
                     sh '''
-                    docker login -u $docker_usr -p $docker_pwd
+                    
 
-                    docker push prasad53/jenkins-java:1.0
+                    docker push prasad53/jenkins-java:2.0
                     '''
                 }
             }
-        }*/
+        }
 
         stage('Pull image'){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'image-cred', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
                     sh '''
                     
-                    docker pull prasad53/jenkins-java:1.0
+                    docker pull prasad53/jenkins-java:2.0
                     '''
                 }
             }
