@@ -20,7 +20,7 @@ pipeline {
     }  */
 
 
-    stages {
+  /*  stages {
         stage('build image') {
             steps {
                 sh 'docker build -t prasad53/jenkins-java:1.0 .'
@@ -37,7 +37,7 @@ pipeline {
                     '''
                 }
             }
-        }
+        }*/
 
         stage('Pull image'){
             steps {
