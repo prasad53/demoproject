@@ -20,8 +20,8 @@ pipeline {
     }  */
 
 
-  /*  stages {
-        stage('build image') {
+    stages {
+      /*  stage('build image') {
             steps {
                 sh 'docker build -t prasad53/jenkins-java:1.0 .'
             }
