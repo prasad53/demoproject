@@ -1,0 +1,17 @@
+---
+
+- hosts: test
+  
+  tasks:
+
+  - name: install docker
+    shell: 
+      cd ~ && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
+
+  - name: Create a data container
+    docker_container:
+      name: webcontainer
+      image: prasad53/demopage:1.0
+      state: started
+      volumes:
+       - /data

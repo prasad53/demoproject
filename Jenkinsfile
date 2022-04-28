@@ -20,7 +20,7 @@ pipeline {
     }  */
 
 
-    stages {
+  /*  stages {
         stage('build image') {
             steps {
                 sh 'docker build -t prasad53/jenkins-java:2.0 .'
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'image-cred', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
                     sh '''
-                    
+                    docker login -u $docker_usr -p $docker_pwd
 
                     docker push prasad53/jenkins-java:2.0
                     '''
@@ -49,6 +49,37 @@ pipeline {
                 }
             }
         }
-    }
+    }  */
+
+
+      stages {
+          stage('Build image'){
+              steps {
+                  sh ' docker build -t prasad53/demopage:1.0 .'
+              }
+          }
+
+          stage('Push image'){
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'image-cred', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
+                    sh '''
+                    docker login -u $docker_usr -p $docker_pwd
+
+                    docker push prasad53/demopage:1.0
+                    '''
+                }
+            }
+        }
+
+        stage('Run ansible playbook'){
+              steps {
+                  sh '''
+                      ansible all  -i hosts -m ping
+                      ansible-playbook -i hosts webpage.yaml
+                      '''
+              }
+          }
+        
+      }
 }
 

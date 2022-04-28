@@ -7,3 +7,6 @@ ansible_user=winuser
 ansible_password=Password@123
 ansible_winrm_transport=basic
 
+[test
+]
+
