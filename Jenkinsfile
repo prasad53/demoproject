@@ -74,8 +74,8 @@ pipeline {
         stage('Run ansible playbook'){
               steps {
                   sh '''
-                      ansible all  -i hosts -m ping
-                      ansible-playbook -i hosts webpage.yaml
+                      
+                      ansible-playbook  webpage.yaml
                       '''
               }
           }

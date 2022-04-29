@@ -9,5 +9,6 @@
       name: webcontainer
       image: prasad53/demopage:1.0
       state: started
+      published_ports: 8081:80
       volumes:
        - /data
