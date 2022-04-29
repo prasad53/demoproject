@@ -1,12 +1,8 @@
 ---
 
-- hosts: test
+- hosts: localhost
   
   tasks:
-
-  - name: install docker
-    shell: 
-      cd ~ && curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 
   - name: Create a data container
     docker_container:
