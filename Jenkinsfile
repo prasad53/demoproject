@@ -88,10 +88,11 @@ pipeline {
        stages {
         stage('build') {
             steps {
+
                 sh '''
-                   #!/bin/sh
+                   #!/bin/bash
                    DOMAIN_NAME="test.com"
-                   if [[ "$DOMAIN_NAME" == "test.com" ]];then
+                   if [ "$DOMAIN_NAME" = "test.com" ];then
                        echo "Matching"
                     else 
                        echo "Not matching"
