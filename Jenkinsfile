@@ -52,7 +52,7 @@ pipeline {
     }  */
 
 
-      stages {
+    /*  stages {
           stage('Build image'){
               steps {
                   sh ' docker build -t prasad53/demopage:1.0 .'
@@ -80,6 +80,26 @@ pipeline {
               }
           }
         
-      }
+      }*/
+
+
+
+
+       stages {
+        stage('build') {
+            steps {
+                sh '''
+                   #!/bin/bash
+                   DOMAIN_NAME="test.com"
+                   if [[ "$DOMAIN_NAME" == "test.com" ]];then
+                       echo "Matching"
+                    else 
+                       echo "Not matching"
+                    fi   
+                '''
+            }
+        }
+       
+    }  
 }
 
