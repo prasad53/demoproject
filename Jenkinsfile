@@ -109,11 +109,11 @@ pipeline {
                      sh ''' ls
                      ls
                      DOMAIN_NAME="testnew.com"
-                     if [[ "$DOMAIN_NAME" == "test.com" ]]
+                     if [[ "$DOMAIN_NAME" == "test.com" ]]; then
                        echo "Matching"
                      else 
                        echo "Not matching"
-                     
+                     fi
                      '''
                  }
               }
