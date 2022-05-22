@@ -80,7 +80,7 @@ pipeline {
               }
           }
         
-      }*/
+      }
 
 
 
@@ -101,6 +101,20 @@ pipeline {
             }
         }
        
-    }  
+    } */
+
+    stage('Run ansible playbook'){
+              steps {
+                 script{
+                     ls
+                     DOMAIN_NAME="testnew.com"
+                     if ("$DOMAIN_NAME" = "test.com"){
+                       echo "Matching"
+                     }else {
+                       echo "Not matching"
+                     }
+                 }
+              }
+          }  
 }
 
