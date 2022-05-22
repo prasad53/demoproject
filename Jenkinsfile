@@ -108,7 +108,7 @@ pipeline {
                  script{
                      sh ''' ls
                      ls
-                     DOMAIN_NAME="testnew.com"
+                     DOMAIN_NAME="test.com"
                      if [[ "$DOMAIN_NAME" == "test.com" ]]; then
                        echo "Matching"
                      else 
