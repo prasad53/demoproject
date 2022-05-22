@@ -106,7 +106,7 @@ pipeline {
             stage('Run ansible playbook'){
               steps {
                  script{
-                     sh"
+                     sh '
                      ls
                      DOMAIN_NAME="testnew.com"
                      if [[ "$DOMAIN_NAME" == "test.com" ]]
@@ -114,7 +114,7 @@ pipeline {
                      else 
                        echo "Not matching"
                      
-                     "
+                     '
                  }
               }
           }
