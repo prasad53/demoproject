@@ -102,8 +102,8 @@ pipeline {
         }
        
     } */
-
-    stage('Run ansible playbook'){
+        stages {
+            stage('Run ansible playbook'){
               steps {
                  script{
                      ls
@@ -115,6 +115,7 @@ pipeline {
                      }
                  }
               }
-          }  
+          }
+        }  
 }
 
