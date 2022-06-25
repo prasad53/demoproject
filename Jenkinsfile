@@ -102,7 +102,7 @@ pipeline {
         }
        
     } */
-        stages {
+     /*   stages {
             stage('Run ansible playbook'){
               steps {
                  script{
@@ -118,6 +118,22 @@ pipeline {
                  }
               }
           }
-        }  
+        }*/
+
+        stages {
+            stage('Run script'){
+              steps {
+                 script{
+                     sh ''' 
+                      chmod +x test.sh
+                      ./test.sh
+                      ls
+                      pwd
+
+                     '''
+                 }
+              }
+          }
+        }
 }
 
