@@ -4,3 +4,5 @@ touch test.txt
 echo "Hi"
 echo "A text"
 echo "Hello"
+
+echo "Its test branch"
