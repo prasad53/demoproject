@@ -7,3 +7,4 @@ echo "Hello"
 
 echo "Its test branch"
 echo "test1"
+echo "text"
