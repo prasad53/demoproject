@@ -10,3 +10,7 @@ echo "test1"
 ls
 echo "text"
 pwd
+a=20
+b=10
+c=$((a+b))
+echo $c
