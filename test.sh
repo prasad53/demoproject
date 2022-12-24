@@ -9,3 +9,4 @@ echo "Its test branch"
 echo "test1"
 ls
 echo "text"
+pwd
