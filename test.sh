@@ -14,3 +14,7 @@ pwd
 
 echo "test2"
 sleep 1m
+a=20
+b=10
+c=$((a+b))
+echo $c
