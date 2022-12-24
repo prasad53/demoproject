@@ -8,3 +8,6 @@ echo "Hello"
 echo "Its test branch"
 echo "Its master"
 echo "test1"
+ls
+echo "text"
+pwd
