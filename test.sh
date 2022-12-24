@@ -13,3 +13,4 @@ echo "text"
 pwd
 
 echo "test2"
+sleep 1m
