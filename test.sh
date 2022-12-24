@@ -10,3 +10,5 @@ echo "test1"
 ls
 echo "text"
 pwd
+
+echo "test2"
